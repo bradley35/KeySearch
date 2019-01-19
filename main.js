@@ -84,6 +84,7 @@ function findFirstDiffPos(a, b)
 
   return -1;
 }
+
 function go(){
     typed=document.getElementById("enter").value;
     var re = new RegExp("\n", 'g');
@@ -93,10 +94,25 @@ function go(){
         console.log("WRONG")
     }
     run(diff, wrong);
-    if(wrong<=0){
-        all_data.push([typed.slice(-1),new Date().getTime()]);
-    }else{
-        all_data.push(["E:"+typed.slice(-1), new Date().getTime()]);
-    }
+//    if(wrong<=0){
+//        all_data.push([typed.slice(-1),new Date().getTime()]);
+//    }else{
+//        all_data.push(["E:"+typed.slice(-1), new Date().getTime()]);
+//    }
 
 }
+
+var pressed = {};
+
+window.onkeydown = function(e) {
+    if ( pressed[e.which] ) return;
+    pressed[e.which] = e.timeStamp;
+};
+
+window.onkeyup = function(e) {
+    if ( !pressed[e.which] ) return;
+    var duration = ( e.timeStamp - pressed[e.which] );
+    all_data.push([e.which,new Date().getTime(), duration]); // all in milliseconds
+    // Key "e.which" was pressed for "duration" seconds
+    pressed[e.which] = 0;
+};
