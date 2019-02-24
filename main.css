@@ -7,6 +7,9 @@
     box-shadow:2px -5px 6px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
     
 }
+h1{
+    margin-top:0;
+}
 body{
     margin:0;
 }
@@ -34,4 +37,72 @@ words{
 
 p{
     display: inline 
+}
+.black{
+    display:none;
+    background-color:rgba(255, 255, 255, 0.9);
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+}
+.middle{
+    text-align: center;
+    top:-100%;
+    margin: auto;
+    width:500px;
+    background-color:rgba(200, 200, 210, 1);
+    position:relative;
+    display:block;
+}
+.did{
+    padding-top:12px;
+    color:rgba(0, 0, 50, 1);
+    font-size:60pt;
+    padding-bottom:0px;
+    margin:0;
+}
+.middle h3{
+    font-size:20pt;
+    display:inline;
+}
+.score{
+color:red;
+}
+.prompt{
+     color:rgba(0, 0, 0, 0.75);
+}
+.middle input[type="text"]{
+    display:block;
+    width:90%;
+    margin:auto;
+    margin-top:10px;
+    margin-bottom:10px;
+    height:50px;
+    text-align:center;
+    font-size:20pt;
+    background-color:white;
+    border:none;
+    
+}
+.middle input[type="button"]{
+    display:block;
+    width:100%;
+    margin-top:10px;
+    margin-bottom:10px;
+    height:50px;
+    text-align:center;
+    font-size:20pt;
+    background-color:rgba(150, 150, 160, 1);
+    border:none;
+    
+}
+.middle input[type="button"]:hover{
+    cursor: pointer;
+    background-color:rgba(140, 140, 150, 1);
+}
+.middle input[type="button"]:active{
+    cursor: pointer;
+    background-color:rgba(110, 110, 120, 1);
 }

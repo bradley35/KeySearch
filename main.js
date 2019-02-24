@@ -59,20 +59,36 @@ function run(beggining, wrong){
         
     }
     if(text.indexOf("DONE")==0){
-        name = prompt("You are finished! Nice Job. Please enter your name below: ", "");
-        let csvContent = "data:text/csv;charset=utf-8,";
-        all_data.forEach(function(rowArray){
+                let csvContent = "data:text/csv;charset=utf-8,";
+                all_data.forEach(function(rowArray){
             let row = rowArray.join(",");
             csvContent += row + "\r\n";
         }); 
+            
         var encodedUri = encodeURI(csvContent);
         var link = document.createElement("a");
         link.setAttribute("href", encodedUri);
-        link.setAttribute("download", name.replace(" ", "_")+"_data.csv");
-        document.body.appendChild(link);
-        link.click();
+        done(link);
     }
     
+}
+function done(link){
+
+    
+    score = Math.round(1000000000/(all_data[all_data.length-1][1]-all_data[0][1]))
+            $("black").fadeIn();
+    $("#score").html(score);
+    $(".middle").animate({top:"20%"}, 500);
+     $("#submit").click(function(){
+         name = $("#name").val();
+                         link.setAttribute("download", name.replace(" ", "_")+"_data.csv");
+        document.body.appendChild(link);
+         link.click();
+     })
+        //name = prompt("You are finished! Nice Job. You're score is: "+Math.round(1000000000/(all_data[all_data.length-1][1]-all_data[0][1]))+". Please enter your name below: ", "");
+
+
+
 }
 function findFirstDiffPos(a, b)
 {
@@ -105,6 +121,7 @@ function go(){
 var pressed = {};
 
 window.onkeydown = function(e) {
+
     if ( pressed[e.which] ) return;
     pressed[e.which] = e.timeStamp;
 };
