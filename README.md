@@ -6,4 +6,4 @@ I was investigating whether I could use Machine Learning to identity people's ty
 This repository contains the interface I used to collect data and the program I used to analyze it.
 I have removed the csv files I collected from other volunteers to maintain privacy.
 
-Data.xlsx graphs my final results, with total typing time used as a control
+Data.xlsx graphs my final results, with total typing time used as a control.
